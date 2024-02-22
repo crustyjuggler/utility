@@ -3,8 +3,11 @@
 Just a repo with some tools.
 
 ## jest-setup
-#### Bare bones setup script (for Mac) to run npm init, then add jest, jest-extended and babel to a new project. This will create jest.config.js and .babelrc files, as well as change the test script in package.json to run jest. Mainly for code kata quick setup.
+#### Bare bones setup script (for Mac) to run npm init, then add jest, jest-extended and babel to a new project. This will create babel.config.js, as well as change the test script in package.json to run jest, and add jest configuration to package.json. Mainly for code kata quick setup.
 
+- Note: Must have jq command line utility installed to execute!!!
+
+	```brew install jq```
 - Create a project folder.
   
 - From your project folder, execute the following to download jest-setup.sh:

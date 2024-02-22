@@ -10,16 +10,17 @@ echo 'Installing jest-extended...'
 npm i --save-dev jest-extended
 
 echo 'Installing babel...'
-npm i --save-dev @babel/core
-npm i --save-dev @babel/preset-env
+npm install --save-dev babel-jest @babel/core @babel/preset-env
 
-echo 'Creating jest-extended helper...'
-echo -e 'module.exports = {\n\t "setupFilesAfterEnv": ["jest-extended"]\n}' > jest.config.js
-
-echo 'Creating .babelrc...'
-echo -e '{\n\t"presets": ["@babel/preset-env"]\n}' > .babelrc
+echo 'Creating Babel config...'
+echo -e 'module.exports = {\n\t"presets": [["@babel/preset-env", {targets: {node: "current"}}]],\n};' > babel.config.js
 
 echo 'Adding jest script to package.json...'
 sed -i '' 's+"test".*+"test": "jest --watchAll --verbose"+g' package.json
+
+echo 'Adding jest config to package.json...'
+cat package.json | jq '. += {"jest": {"setupFilesAfterEnv": ["jest-extended/all"]}}' > temp.json
+cat temp.json > package.json
+rm -rf temp.json
 
 echo 'Finished!'
