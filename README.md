@@ -12,7 +12,7 @@ Just a repo with some tools.
   
 - From your project folder, execute the following to download jest-setup.sh:
   
-	```curl -L https://raw.githubusercontent.com/crustyjuggler/utility/master/jest-setup.sh > jest-setup.sh```
+	```curl -L https://raw.githubusercontent.com/crustyjuggler/utility/master/jest-setup/jest-setup.sh > jest-setup.sh```
 - From you project folder, execute jest-setup:
   
 	```./jest-setup.sh```
